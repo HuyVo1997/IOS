@@ -11,42 +11,24 @@ import FirebaseDatabase
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var refFoodCategory: DatabaseReference!
-    var foodCategoryList = [FoodCategory]()
+    var categoryVM = CategoryViewModel()
     var category: FoodCategory!
     @IBOutlet weak var tblCategory: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        refFoodCategory = Database.database().reference().child("category")
-        refFoodCategory.observe(DataEventType.value, with: {(snapshot) in
-            if snapshot.childrenCount > 0 {
-                self.foodCategoryList.removeAll()
-                for foodCategories in snapshot.children.allObjects as![DataSnapshot]{
-                    let foodCategoryObject = foodCategories.value as? [String: AnyObject]
-                    let categoryId = foodCategoryObject?["id"]
-                    let categoryTitle = foodCategoryObject?["title"]
-                    let categoryImg = foodCategoryObject?["imageName"]
-                    
-                    let foodCategory = FoodCategory(id: (categoryId as! String?)!,title: ((categoryTitle as! String?)!), imageName: ((categoryImg as! String?)!))
-                    
-                    self.foodCategoryList.append(foodCategory)
-                }
-                self.tblCategory.reloadData()
-            }
-        })
+        categoryVM.loadData(tableData: tblCategory)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        foodCategoryList.count
+        categoryVM.countCategory()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellCategory", for: indexPath) as! CategoryCell
-        
-        cell.categoryTitle.text = foodCategoryList[indexPath.row].title
-        cell.categoryImg.image = UIImage(named: foodCategoryList[indexPath.row].imageName)
+        cell.categoryTitle.text = categoryVM.getCategory(row: indexPath.row) .title
+        cell.categoryImg.image = UIImage(named: categoryVM.getCategory(row: indexPath.row).imageName)
         return cell
     }
     
@@ -55,17 +37,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        category = foodCategoryList[indexPath.row]
+        category = categoryVM.getCategory(row: indexPath.row)
+        
     }
     
-    func updateCategory(id: String, title:String, image: String){
-        let category = [
-            "id": id,
-            "title": title,
-            "imageName": image]
-        refFoodCategory.child(id).setValue(category)
-    }
-    
+
     @IBAction func addCategory(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Add Category", message: "Add", preferredStyle: .alert)
         
@@ -78,11 +54,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         })
         
         let addAction = UIAlertAction(title: "OK", style: .default, handler: {(_) in
-            let key = self.refFoodCategory.childByAutoId().key
-            let category = ["id":key,
-                            "title": alert.textFields?[0].text!,
-                            "imageName" : alert.textFields?[1].text!]   
-            self.refFoodCategory.child(key!).setValue(category)
+            self.categoryVM.addCategory(title: alert.textFields?[0].text, imageName: alert.textFields?[1].text)
         })
         
         let cancleAction = UIAlertAction(title: "Cancle", style: .cancel, handler: nil)
@@ -124,7 +96,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let title = alert.textFields?[0].text
                 let imageName = alert.textFields?[1].text
                 
-                self.updateCategory(id: id, title: title!, image: imageName!)
+                self.categoryVM.updateCategory(id: id, title: title!, image: imageName!)
                 
             })
             
@@ -135,10 +107,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             present(alert,animated: true,completion: nil)
         }
-    }
-    
-    func delete(id: String){
-        refFoodCategory.child(id).setValue(nil)
     }
     
     @IBAction func deleteCategory(_ sender: UIBarButtonItem) {
@@ -159,7 +127,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let alert = UIAlertController(title: "Delete", message: category.title, preferredStyle: .alert)
             
             let deleteAction = UIAlertAction(title: "OK", style: .destructive, handler: {Void in
-                self.delete(id: self.category.id)
+                self.categoryVM.delete(id: self.category.id)
             })
             
             let cancleAction = UIAlertAction(title: "Cancle", style: .cancel, handler: nil)
