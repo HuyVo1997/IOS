@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8FE012EB237AA60A00C8B4D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE012EA237AA60A00C8B4D0 /* AppDelegate.swift */; };
+		8FE012ED237AA60A00C8B4D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE012EC237AA60A00C8B4D0 /* SceneDelegate.swift */; };
+		8FE012EF237AA60A00C8B4D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE012EE237AA60A00C8B4D0 /* ViewController.swift */; };
+		8FE012F2237AA60A00C8B4D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE012F0237AA60A00C8B4D0 /* Main.storyboard */; };
+		8FE012F4237AA61000C8B4D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE012F3237AA61000C8B4D0 /* Assets.xcassets */; };
+		8FE012F7237AA61000C8B4D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE012F5237AA61000C8B4D0 /* LaunchScreen.storyboard */; };
+		8FE01303237AA73900C8B4D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FE01302237AA73900C8B4D0 /* GoogleService-Info.plist */; };
+		8FE01307237AAB4A00C8B4D0 /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE01306237AAB4A00C8B4D0 /* FoodCategory.swift */; };
+		8FE01309237AAB7800C8B4D0 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE01308237AAB7800C8B4D0 /* Recipe.swift */; };
+		8FE0130B237AAE3100C8B4D0 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE0130A237AAE3100C8B4D0 /* CategoryCell.swift */; };
+		F2EA596E8BCBE591F0BAFCD7 /* Pods_GoodEatingFireBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21BE00EDDEBE4ABD265B2A80 /* Pods_GoodEatingFireBase.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D5AF57ADE8DEF69A6878BDA /* Pods-GoodEatingFireBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodEatingFireBase.debug.xcconfig"; path = "Target Support Files/Pods-GoodEatingFireBase/Pods-GoodEatingFireBase.debug.xcconfig"; sourceTree = "<group>"; };
+		21BE00EDDEBE4ABD265B2A80 /* Pods_GoodEatingFireBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodEatingFireBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FE012E7237AA60A00C8B4D0 /* GoodEatingFireBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodEatingFireBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FE012EA237AA60A00C8B4D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8FE012EC237AA60A00C8B4D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8FE012EE237AA60A00C8B4D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8FE012F1237AA60A00C8B4D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8FE012F3237AA61000C8B4D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8FE012F6237AA61000C8B4D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8FE012F8237AA61000C8B4D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FE01302237AA73900C8B4D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8FE01306237AAB4A00C8B4D0 /* FoodCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
+		8FE01308237AAB7800C8B4D0 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		8FE0130A237AAE3100C8B4D0 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		F26DCA07C40F791BF7B67207 /* Pods-GoodEatingFireBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodEatingFireBase.release.xcconfig"; path = "Target Support Files/Pods-GoodEatingFireBase/Pods-GoodEatingFireBase.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8FE012E4237AA60A00C8B4D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2EA596E8BCBE591F0BAFCD7 /* Pods_GoodEatingFireBase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6532A3A11323228201FF6950 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D5AF57ADE8DEF69A6878BDA /* Pods-GoodEatingFireBase.debug.xcconfig */,
+				F26DCA07C40F791BF7B67207 /* Pods-GoodEatingFireBase.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8FE012DE237AA60A00C8B4D0 = {
+			isa = PBXGroup;
+			children = (
+				8FE01302237AA73900C8B4D0 /* GoogleService-Info.plist */,
+				8FE012E9237AA60A00C8B4D0 /* GoodEatingFireBase */,
+				8FE012E8237AA60A00C8B4D0 /* Products */,
+				6532A3A11323228201FF6950 /* Pods */,
+				A98BFC3E3094DFBD9C223C80 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8FE012E8237AA60A00C8B4D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8FE012E7237AA60A00C8B4D0 /* GoodEatingFireBase.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8FE012E9237AA60A00C8B4D0 /* GoodEatingFireBase */ = {
+			isa = PBXGroup;
+			children = (
+				8FE01301237AA64300C8B4D0 /* Controller */,
+				8FE01300237AA63C00C8B4D0 /* ViewModel */,
+				8FE012FF237AA63800C8B4D0 /* View */,
+				8FE012FE237AA62900C8B4D0 /* Model */,
+				8FE012EA237AA60A00C8B4D0 /* AppDelegate.swift */,
+				8FE012EC237AA60A00C8B4D0 /* SceneDelegate.swift */,
+				8FE012EE237AA60A00C8B4D0 /* ViewController.swift */,
+				8FE012F0237AA60A00C8B4D0 /* Main.storyboard */,
+				8FE012F3237AA61000C8B4D0 /* Assets.xcassets */,
+				8FE012F5237AA61000C8B4D0 /* LaunchScreen.storyboard */,
+				8FE01306237AAB4A00C8B4D0 /* FoodCategory.swift */,
+				8FE012F8237AA61000C8B4D0 /* Info.plist */,
+				8FE01308237AAB7800C8B4D0 /* Recipe.swift */,
+				8FE0130A237AAE3100C8B4D0 /* CategoryCell.swift */,
+			);
+			path = GoodEatingFireBase;
+			sourceTree = "<group>";
+		};
+		8FE012FE237AA62900C8B4D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8FE012FF237AA63800C8B4D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8FE01300237AA63C00C8B4D0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8FE01301237AA64300C8B4D0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A98BFC3E3094DFBD9C223C80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21BE00EDDEBE4ABD265B2A80 /* Pods_GoodEatingFireBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8FE012E6237AA60A00C8B4D0 /* GoodEatingFireBase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FE012FB237AA61000C8B4D0 /* Build configuration list for PBXNativeTarget "GoodEatingFireBase" */;
+			buildPhases = (
+				40EF303A18D6143027471CC0 /* [CP] Check Pods Manifest.lock */,
+				8FE012E3237AA60A00C8B4D0 /* Sources */,
+				8FE012E4237AA60A00C8B4D0 /* Frameworks */,
+				8FE012E5237AA60A00C8B4D0 /* Resources */,
+				C99181DE1B15AD59C8694105 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoodEatingFireBase;
+			productName = GoodEatingFireBase;
+			productReference = 8FE012E7237AA60A00C8B4D0 /* GoodEatingFireBase.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8FE012DF237AA60A00C8B4D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Huy Vo";
+				TargetAttributes = {
+					8FE012E6237AA60A00C8B4D0 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = 8FE012E2237AA60A00C8B4D0 /* Build configuration list for PBXProject "GoodEatingFireBase" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8FE012DE237AA60A00C8B4D0;
+			productRefGroup = 8FE012E8237AA60A00C8B4D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8FE012E6237AA60A00C8B4D0 /* GoodEatingFireBase */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8FE012E5237AA60A00C8B4D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FE012F7237AA61000C8B4D0 /* LaunchScreen.storyboard in Resources */,
+				8FE01303237AA73900C8B4D0 /* GoogleService-Info.plist in Resources */,
+				8FE012F4237AA61000C8B4D0 /* Assets.xcassets in Resources */,
+				8FE012F2237AA60A00C8B4D0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		40EF303A18D6143027471CC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoodEatingFireBase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C99181DE1B15AD59C8694105 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoodEatingFireBase/Pods-GoodEatingFireBase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoodEatingFireBase/Pods-GoodEatingFireBase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoodEatingFireBase/Pods-GoodEatingFireBase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8FE012E3237AA60A00C8B4D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FE012EF237AA60A00C8B4D0 /* ViewController.swift in Sources */,
+				8FE012EB237AA60A00C8B4D0 /* AppDelegate.swift in Sources */,
+				8FE012ED237AA60A00C8B4D0 /* SceneDelegate.swift in Sources */,
+				8FE01307237AAB4A00C8B4D0 /* FoodCategory.swift in Sources */,
+				8FE01309237AAB7800C8B4D0 /* Recipe.swift in Sources */,
+				8FE0130B237AAE3100C8B4D0 /* CategoryCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8FE012F0237AA60A00C8B4D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8FE012F1237AA60A00C8B4D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8FE012F5237AA61000C8B4D0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8FE012F6237AA61000C8B4D0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8FE012F9237AA61000C8B4D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8FE012FA237AA61000C8B4D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8FE012FC237AA61000C8B4D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D5AF57ADE8DEF69A6878BDA /* Pods-GoodEatingFireBase.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GoodEatingFireBase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = project.GoodEatingFireBase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8FE012FD237AA61000C8B4D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F26DCA07C40F791BF7B67207 /* Pods-GoodEatingFireBase.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GoodEatingFireBase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = project.GoodEatingFireBase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8FE012E2237AA60A00C8B4D0 /* Build configuration list for PBXProject "GoodEatingFireBase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FE012F9237AA61000C8B4D0 /* Debug */,
+				8FE012FA237AA61000C8B4D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FE012FB237AA61000C8B4D0 /* Build configuration list for PBXNativeTarget "GoodEatingFireBase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FE012FC237AA61000C8B4D0 /* Debug */,
+				8FE012FD237AA61000C8B4D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8FE012DF237AA60A00C8B4D0 /* Project object */;
+}

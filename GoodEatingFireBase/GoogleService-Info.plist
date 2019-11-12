@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>220084815277-fkcsoo7cj4342qdvsio8oj6t6600bdku.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.220084815277-fkcsoo7cj4342qdvsio8oj6t6600bdku</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBI4kV3IigJuQ3pqwdl-PCjD5pWTGOOg04</string>
+	<key>GCM_SENDER_ID</key>
+	<string>220084815277</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>project.GoodEatingFireBase</string>
+	<key>PROJECT_ID</key>
+	<string>goodeating-3eca1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>goodeating-3eca1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:220084815277:ios:b787aa8c0cf75073d90d24</string>
+	<key>DATABASE_URL</key>
+	<string>https://goodeating-3eca1.firebaseio.com</string>
+</dict>
+</plist>
