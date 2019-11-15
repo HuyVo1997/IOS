@@ -19,8 +19,4 @@ class CategoryCell: UITableViewCell {
         // Initialization code
     }
     
-    func configureCell(category: FoodCategory) {
-        categoryImg.image = UIImage(named: category.imageName)
-        categoryTitle.text = category.title
-    }
 }

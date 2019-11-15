@@ -8,11 +8,13 @@
 
 import UIKit
 import FirebaseDatabase
-
+import FirebaseStorage
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var categoryVM = CategoryViewModel()
     var category: FoodCategory!
+    var editText: String!
+    
     @IBOutlet weak var tblCategory: UITableView!
     
     override func viewDidLoad() {
@@ -27,8 +29,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellCategory", for: indexPath) as! CategoryCell
+        
         cell.categoryTitle.text = categoryVM.getCategory(row: indexPath.row) .title
-        cell.categoryImg.image = UIImage(named: categoryVM.getCategory(row: indexPath.row).imageName)
+        
+        if let categoryImageURL = categoryVM.getCategory(row: indexPath.row).image {
+            let url = URL(string: categoryImageURL)
+            let request = URLRequest(url: url!)
+            URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                if error != nil {
+                    print(error as Any)
+                    return
+                }
+                DispatchQueue.global(qos: .background).async {
+                    DispatchQueue.main.async {
+                        cell.categoryImg.image = UIImage(data: data!)
+                    }
+                }
+            }).resume()
+        }
         return cell
     }
     
@@ -37,108 +55,61 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         category = categoryVM.getCategory(row: indexPath.row)
         
     }
     
+    @IBAction func deleteCategory(_ sender: UIBarButtonItem) {
+        if(category == nil){
+            let alert = UIAlertController(title: "Information", message: "Please Choose Category Food", preferredStyle: .alert)
 
-    @IBAction func addCategory(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Add Category", message: "Add", preferredStyle: .alert)
-        
-        alert.addTextField(configurationHandler: {(textField) in
-            textField.placeholder = "Category Here"
-        })
-        
-        alert.addTextField(configurationHandler: {(textField) in
-            textField.placeholder = "Image Name"
-        })
-        
-        let addAction = UIAlertAction(title: "OK", style: .default, handler: {(_) in
-            self.categoryVM.addCategory(title: alert.textFields?[0].text, imageName: alert.textFields?[1].text)
-        })
-        
-        let cancleAction = UIAlertAction(title: "Cancle", style: .cancel, handler: nil)
-        
-        alert.addAction(cancleAction)
-    
-        alert.addAction(addAction)
-        
-        present(alert,animated: true,completion: nil)
+            let deleteAction = UIAlertAction(title: "OK", style: .default, handler: {Void in
+
+            })
+
+            alert.addAction(deleteAction)
+
+            present(alert,animated: true,completion: nil)
+        }
+
+        else{
+
+            let alert = UIAlertController(title: "Delete", message: category.title, preferredStyle: .alert)
+
+            let deleteAction = UIAlertAction(title: "OK", style: .destructive, handler: {Void in
+                let imgRef = Storage.storage().reference(forURL: self.category.image!)
+                imgRef.delete(completion: nil)
+                self.categoryVM.delete(id: self.category.id)
+                
+            })
+
+            let cancleAction = UIAlertAction(title: "Cancle", style: .cancel, handler: nil)
+
+            alert.addAction(cancleAction)
+            alert.addAction(deleteAction)
+
+            present(alert,animated: true,completion: nil)
+        }
     }
     
     @IBAction func btnEditCategory(_ sender: UIBarButtonItem) {
-        if(category == nil){
-            let alert = UIAlertController(title: "Information", message: "Please Choose Food Category", preferredStyle: .alert)
-            
-            let updateAction = UIAlertAction(title: "OK", style: .default, handler: {Void in
-                
-            })
-            
-            alert.addAction(updateAction)
-            
-            present(alert,animated: true,completion: nil)
-            
-        }
-        else{
-            let alert = UIAlertController(title: "Update", message: category.title, preferredStyle: .alert)
-            
-            alert.addTextField(configurationHandler: {(textField) in
-                textField.text = self.category.title
-            })
-            
-            alert.addTextField(configurationHandler: {(textField) in
-                textField.text = self.category.imageName
-            })
-            
-            let updateAction = UIAlertAction(title: "OK", style: .default, handler: {(_) in
-                
-                let id = self.category.id
-                let title = alert.textFields?[0].text
-                let imageName = alert.textFields?[1].text
-                
-                self.categoryVM.updateCategory(id: id, title: title!, image: imageName!)
-                
-            })
-            
-            let cancleAction = UIAlertAction(title: "Cancle", style: .cancel, handler: nil)
-            
-            alert.addAction(cancleAction)
-            alert.addAction(updateAction)
-            
-            present(alert,animated: true,completion: nil)
-        }
+        editText = "Edit"
+        performSegue(withIdentifier: "editPresent", sender: self)
     }
     
-    @IBAction func deleteCategory(_ sender: UIBarButtonItem) {
-        if(category == nil){
-            let alert = UIAlertController(title: "Information", message: "Please Choose Food Category", preferredStyle: .alert)
-            
-            let deleteAction = UIAlertAction(title: "OK", style: .default, handler: {Void in
-                
-            })
-            
-            alert.addAction(deleteAction)
-            
-            present(alert,animated: true,completion: nil)
-        }
-        
-        else{
-            
-            let alert = UIAlertController(title: "Delete", message: category.title, preferredStyle: .alert)
-            
-            let deleteAction = UIAlertAction(title: "OK", style: .destructive, handler: {Void in
-                self.categoryVM.delete(id: self.category.id)
-            })
-            
-            let cancleAction = UIAlertAction(title: "Cancle", style: .cancel, handler: nil)
-            
-            alert.addAction(cancleAction)
-            alert.addAction(deleteAction)
-            
-            present(alert,animated: true,completion: nil)
-        }
+    @IBAction func btnAddCategory(_ sender: UIBarButtonItem) {
+        editText = "Add"
+        performSegue(withIdentifier: "editPresent", sender: self)
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let editVC = segue.destination as? AddCategoryVC {
+            editVC.edit = editText
+            if(editText == "Edit"){
+                editVC.category = category
+            }
+        }
+    }
 }
 

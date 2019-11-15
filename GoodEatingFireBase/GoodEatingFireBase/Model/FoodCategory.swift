@@ -10,6 +10,6 @@ import UIKit
 
 struct FoodCategory {
     let id : String
-    let title : String
-    let imageName : String
+    let title : String?
+    let image : String?
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8F1C1FEA237B08FB00B7674B /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C1FE9237B08FB00B7674B /* CategoryViewModel.swift */; };
+		8F1C1FEC237BBA9E00B7674B /* viewDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C1FEB237BBA9E00B7674B /* viewDesign.swift */; };
+		8F1C1FEE237BBEB800B7674B /* AddCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C1FED237BBEB800B7674B /* AddCategoryVC.swift */; };
 		8FE012EB237AA60A00C8B4D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE012EA237AA60A00C8B4D0 /* AppDelegate.swift */; };
 		8FE012ED237AA60A00C8B4D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE012EC237AA60A00C8B4D0 /* SceneDelegate.swift */; };
 		8FE012EF237AA60A00C8B4D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE012EE237AA60A00C8B4D0 /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 		1D5AF57ADE8DEF69A6878BDA /* Pods-GoodEatingFireBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodEatingFireBase.debug.xcconfig"; path = "Target Support Files/Pods-GoodEatingFireBase/Pods-GoodEatingFireBase.debug.xcconfig"; sourceTree = "<group>"; };
 		21BE00EDDEBE4ABD265B2A80 /* Pods_GoodEatingFireBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodEatingFireBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F1C1FE9237B08FB00B7674B /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		8F1C1FEB237BBA9E00B7674B /* viewDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewDesign.swift; sourceTree = "<group>"; };
+		8F1C1FED237BBEB800B7674B /* AddCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryVC.swift; sourceTree = "<group>"; };
 		8FE012E7237AA60A00C8B4D0 /* GoodEatingFireBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodEatingFireBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE012EA237AA60A00C8B4D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FE012EC237AA60A00C8B4D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 				8FE012FF237AA63800C8B4D0 /* View */,
 				8FE012FE237AA62900C8B4D0 /* Model */,
 				8FE012EA237AA60A00C8B4D0 /* AppDelegate.swift */,
+				8FE012F0237AA60A00C8B4D0 /* Main.storyboard */,
+				8FE012F5237AA61000C8B4D0 /* LaunchScreen.storyboard */,
 				8FE012EC237AA60A00C8B4D0 /* SceneDelegate.swift */,
 				8FE012F3237AA61000C8B4D0 /* Assets.xcassets */,
 				8FE012F8237AA61000C8B4D0 /* Info.plist */,
@@ -98,6 +104,7 @@
 		8FE012FE237AA62900C8B4D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8FE01308237AAB7800C8B4D0 /* Recipe.swift */,
 				8FE01306237AAB4A00C8B4D0 /* FoodCategory.swift */,
 			);
 			path = Model;
@@ -106,10 +113,8 @@
 		8FE012FF237AA63800C8B4D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8FE012F0237AA60A00C8B4D0 /* Main.storyboard */,
-				8FE012F5237AA61000C8B4D0 /* LaunchScreen.storyboard */,
+				8F1C1FEB237BBA9E00B7674B /* viewDesign.swift */,
 				8FE0130A237AAE3100C8B4D0 /* CategoryCell.swift */,
-				8FE01308237AAB7800C8B4D0 /* Recipe.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				8FE012EE237AA60A00C8B4D0 /* ViewController.swift */,
+				8F1C1FED237BBEB800B7674B /* AddCategoryVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -254,6 +260,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F1C1FEE237BBEB800B7674B /* AddCategoryVC.swift in Sources */,
+				8F1C1FEC237BBA9E00B7674B /* viewDesign.swift in Sources */,
 				8FE012EF237AA60A00C8B4D0 /* ViewController.swift in Sources */,
 				8FE012EB237AA60A00C8B4D0 /* AppDelegate.swift in Sources */,
 				8FE012ED237AA60A00C8B4D0 /* SceneDelegate.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
-
+import FirebaseStorage
 class CategoryViewModel: NSObject {
     var refFoodCategory: DatabaseReference!
     var foodCategoryList = [FoodCategory]()
@@ -20,11 +20,12 @@ class CategoryViewModel: NSObject {
                 self.foodCategoryList.removeAll()
                 for foodCategories in snapshot.children.allObjects as![DataSnapshot]{
                     let foodCategoryObject = foodCategories.value as? [String: AnyObject]
-                    let categoryId = foodCategoryObject?["id"]
-                    let categoryTitle = foodCategoryObject?["title"]
-                    let categoryImg = foodCategoryObject?["imageName"]
                     
-                    let foodCategory = FoodCategory(id: (categoryId as! String?)!,title: ((categoryTitle as! String?)!), imageName: ((categoryImg as! String?)!))
+                    let categoryID = foodCategoryObject?["id"]
+                    let categoryTitle = foodCategoryObject?["title"]
+                    let categoryImg = foodCategoryObject?["image"]
+                    
+                    let foodCategory = FoodCategory(id: categoryID as! String,title: categoryTitle as! String?, image: categoryImg as! String?)
                     
                     self.foodCategoryList.append(foodCategory)
                 }
@@ -41,23 +42,51 @@ class CategoryViewModel: NSObject {
         return foodCategoryList[row]
     }
     
-    func updateCategory(id: String, title:String, image: String){
-        let category = [
-            "id": id,
-            "title": title,
-            "imageName": image]
-        refFoodCategory.child(id).setValue(category)
+    func addCategory(image: UIImage,title: String){
+        let imageName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child("\(imageName).jpeg")
+        if let uploadData = image.jpegData(compressionQuality: 0.75){
+            storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    print(error as Any)
+                    return
+                }
+                else {
+                    let key = self.refFoodCategory.childByAutoId().key
+                        storageRef.downloadURL(completion: {(url,error) in
+                            let values = ["id":key,
+                                "title": title,
+                                "image": url?.absoluteString]
+                            self.refFoodCategory.child(key!).setValue(values)
+                    })
+                }
+            })
+        }
+    }
+    
+    func updateCategory(id: String, title:String, image: UIImage){
+        let imageName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child("\(imageName).jpeg")
+        if let uploadData = image.jpegData(compressionQuality: 0.75){
+            storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    print(error as Any)
+                    return
+                }
+                else {
+                        storageRef.downloadURL(completion: {(url,error) in
+                            let categories = ["id":id,
+                                "title": title,
+                                "image": url?.absoluteString]
+                            self.refFoodCategory.child(id).setValue(categories)
+                    })
+                }
+            })
+        }
     }
     
     func delete(id: String){
         refFoodCategory.child(id).setValue(nil)
     }
-    
-    func addCategory(title: String!, imageName: String!){
-        let key = self.refFoodCategory.childByAutoId().key
-        let category = ["id":key,
-                        "title": title,
-                        "imageName" : imageName]
-        self.refFoodCategory.child(key!).setValue(category)
-    }
 }
+
