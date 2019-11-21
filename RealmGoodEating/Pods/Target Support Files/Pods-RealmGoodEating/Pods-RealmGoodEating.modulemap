@@ -1,0 +1,6 @@
+framework module Pods_RealmGoodEating {
+  umbrella header "Pods-RealmGoodEating-umbrella.h"
+
+  export *
+  module * { export * }
+}
